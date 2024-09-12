@@ -1,3 +1,4 @@
+"use client";
 import CodeEditor from "@/components/CodeEditor";
 import { backgrounds, languages, themes } from "@/utils/utilities";
 import { useRef, useState } from "react";
