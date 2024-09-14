@@ -1,67 +1,104 @@
-"use client";
-import BackgroundSelector from "@/components/BackgroundSelector";
-import CodeEditor from "@/components/CodeEditor";
-import LanguageSelector from "@/components/LanguageSelector";
-import PaddingSelector from "@/components/PaddingSelector";
-import ThemeSelector from "@/components/ThemeSelector";
-import { backgrounds, languages, themes } from "@/utils/utilities";
-import { useRef, useState } from "react";
+import Header from "@/components/Header";
+import HeroBanner from "@/components/HeroBanner";
+import {Zap, Download, Palette } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Picture1 from "@/public/pictures/product1.png"
+import Image from "next/image";
+
 
 export default function Home() {
-  const editorRef = useRef(null);
-  const [language, setLanguage] = useState(languages[0].name);
-  const [theme, setTheme] = useState(themes[0]);
-  const [background, setBackground] = useState(backgrounds[0]);
-  const [activeIcon, setActiveIcon] = useState(languages[0].icon);
-  const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
-  const [currentPadding, setCurrentPadding] = useState(paddings[2]);
   return (
-    <main className=" h-[100vh] flex flex-col items-center justify-between">
-      <header
-        className="mt-6 flex gap-6 w-[940px] p-5 fixed top-0 left-1/2 translate-x-[-50%]
-         z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md"
-      >
-        <LanguageSelector
-          // language={language}
-          // setLanguage={setLanguage}
-          // seActiveIcon={setActiveIcon}
-        />
-
-        <ThemeSelector 
-        // theme={theme} setTheme={setTheme}
-         />
-
-        <BackgroundSelector
-          // background={background}
-          // setBackground={setBackground}
-        />
-
-        <PaddingSelector
-          // paddings={paddings}
-          // currentPadding={currentPadding}
-          // setCurrentPadding={setCurrentPadding}
-        />
-
-        <div className="export-btn self-center ml-auto">
-          <button
-            className="flex items-center gap-3 py-2 px-3 bg-blue-400 rounded-md text-sm text-blue-400 
-              font-medium bg-opacity-10 hover:bg-opacity-80 hover:text-slate-50 ease-in-out transition-all 
-              duration-300"
-            // onClick={exportPng}
-          >
-            {/* <Download /> */}
-            Export PNG
-          </button>
-        </div>
-      </header>
-      <div className="code-editor-ref mt-[14rem]" ref={editorRef}>
-        <CodeEditor
-          language={language}
-          theme={theme}
-          background={background}
-          icon={activeIcon}
-          currentPadding={currentPadding}
-        />
+    <main className="">
+      <Header />
+      <div className="flex-1">
+        <HeroBanner />
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-white">
+              Features
+            </h2>
+            <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
+                <Palette  className="h-12 w-12 text-purple-400" />
+                <h3 className="text-xl font-bold text-white">
+                  Multiple Themes
+                </h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Choose from a variety of themes to match your style or brand.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
+                <Zap className="h-12 w-12 text-purple-400" />
+                <h3 className="text-xl font-bold text-white">
+                  Instant Generation
+                </h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Get your code image in seconds with our lightning-fast
+                  processing.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
+                <Download className="h-12 w-12 text-purple-400" />
+                <h3 className="text-xl font-bold text-white">Downloadable</h3>
+                <p className="text-sm text-gray-300 text-center">
+                  Easily download your code images in various formats for use
+                  anywhere.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 to-purple-900">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-white">
+              Product Showcase
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src={Picture1}
+                  alt="Code snippet image example 1"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="/placeholder.svg?height=400&width=600"
+                  alt="Code snippet image example 2"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img
+                  src="/placeholder.svg?height=400&width=600"
+                  alt="Code snippet image example 3"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 to-blue-900">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+                  Ready to create stunning code images?
+                </h2>
+                <p className="mx-auto max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Join thousands of developers who use CodeSnap to share their
+                  code beautifully.
+                </p>
+              </div>
+              <Button
+                className="bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                size="lg"
+              >
+                Get Started for Free
+              </Button>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
