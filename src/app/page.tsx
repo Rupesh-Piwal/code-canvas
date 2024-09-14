@@ -1,25 +1,23 @@
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
-import {Zap, Download, Palette } from "lucide-react";
+import { Zap, Download, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Picture1 from "@/public/pictures/product1.png"
-import Image from "next/image";
-
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-[#080624]">
       <Header />
       <div className="flex-1">
         <HeroBanner />
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-800">
+        <section className="w-full py-12 md:py-24  bg-[#080624]">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-white">
               Features
             </h2>
             <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
-                <Palette  className="h-12 w-12 text-purple-400" />
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg border border-solid border-slate-700  bg-[#ffffff0d]">
+                <Palette className="h-12 w-12 text-purple-400" />
                 <h3 className="text-xl font-bold text-white">
                   Multiple Themes
                 </h3>
@@ -27,7 +25,7 @@ export default function Home() {
                   Choose from a variety of themes to match your style or brand.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg border border-solid border-slate-700  bg-[#ffffff0d]">
                 <Zap className="h-12 w-12 text-purple-400" />
                 <h3 className="text-xl font-bold text-white">
                   Instant Generation
@@ -37,7 +35,7 @@ export default function Home() {
                   processing.
                 </p>
               </div>
-              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg bg-gray-700">
+              <div className="flex flex-col items-center space-y-2 p-4 rounded-lg border border-solid border-slate-700  bg-[#ffffff0d]">
                 <Download className="h-12 w-12 text-purple-400" />
                 <h3 className="text-xl font-bold text-white">Downloadable</h3>
                 <p className="text-sm text-gray-300 text-center">
@@ -48,37 +46,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 to-purple-900">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-white">
-              Product Showcase
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={Picture1}
-                  alt="Code snippet image example 1"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Code snippet image example 2"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Code snippet image example 3"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 to-blue-900">
+        <section className="w-full py-12 md:py-24 lg:py-12 bg-[#080624]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -90,12 +58,12 @@ export default function Home() {
                   code beautifully.
                 </p>
               </div>
-              <Button
-                className="bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-                size="lg"
+              <Link href="/codetoimage"
+                className="bg-blue-600 text-white hover:bg-blue-700 transition-colors px-4 py-2 rounded"
+                
               >
                 Get Started for Free
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
