@@ -1,7 +1,7 @@
 export const languages = [
   {
     name: "JavaScript",
-    icon: "icons/javascript.svg",
+    icon: "/icons/javascript.svg",
   },
   {
     name: "HTML",

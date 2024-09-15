@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Banner from "@/public/pictures/banner.png";
+import Banner from "../../public/pictures/banner.png";
 import Link from "next/link";
 
 const HeroBanner = () => {

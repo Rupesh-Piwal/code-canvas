@@ -136,7 +136,7 @@ function CodeEditor({
             className="icon flex justify-center items-center p-1 bg-black
                bg-opacity-30 rounded-sm"
           >
-            <img src={icon} className="w-[33px]" alt="" />
+            <img src={icon} className="w-[33px]" alt="icon" />
           </div>
         </div>
         <AceEditor
@@ -144,7 +144,7 @@ function CodeEditor({
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
           theme={theme}
-        //   mode={language.toLocaleLowerCase()}
+          //   mode={language.toLocaleLowerCase()}
           showGutter={false}
           wrapEnabled={true}
           height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
