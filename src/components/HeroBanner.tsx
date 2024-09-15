@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
 import Banner from "@/public/pictures/banner.png";
 import Link from "next/link";
 
 const HeroBanner = () => {
   return (
-    <section className="w-full md:py-24 bg-[#080624]">
+    <section className="w-full py-12 md:py-24 bg-[#080624]">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-7 items-center space-y-4 text-center">
           <div className="space-y-2">
