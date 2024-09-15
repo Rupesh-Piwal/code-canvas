@@ -15,6 +15,8 @@ const page = () => {
     const [activeIcon, setActiveIcon] = useState(languages[0].icon);
     const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
     const [currentPadding, setCurrentPadding] = useState(paddings[2]);
+
+    
   return (
     <main className=" h-[100vh] flex flex-col items-center justify-between">
       <header
@@ -22,9 +24,9 @@ const page = () => {
        z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md"
       >
         <LanguageSelector
-        // language={language}
-        // setLanguage={setLanguage}
-        // seActiveIcon={setActiveIcon}
+        language={language}
+        setLanguage={setLanguage}
+        setActiveIcon={setActiveIcon}
         />
 
         <ThemeSelector

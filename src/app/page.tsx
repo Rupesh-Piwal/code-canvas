@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
 import { Zap, Download, Palette } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
