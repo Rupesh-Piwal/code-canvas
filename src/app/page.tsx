@@ -58,9 +58,10 @@ export default function Home() {
                   code beautifully.
                 </p>
               </div>
-              <Link href="/codetoimage"
-                className="bg-blue-600 text-white hover:bg-blue-700 transition-colors px-4 py-2 rounded"
-                
+              <Link
+                href="/codetoimage"
+                className="bg-gradient-to-b from-[#4D36D0] to-[#8474FE]
+ text-[#ffffff] hover:opacity-80 px-6 py-2.5 rounded-lg"
               >
                 Get Started for Free
               </Link>
