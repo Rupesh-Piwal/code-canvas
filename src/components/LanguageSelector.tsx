@@ -15,6 +15,7 @@ const LanguageSelector = ({
   setActiveIcon,
 }: LanguageSelectorProps) => {
   const [showDropdown, setShowDropdown] = useState(false);
+
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
@@ -47,7 +48,10 @@ const LanguageSelector = ({
                 <div key={i}>
                   <button
                     className="dropdown-item text-left hover:text-slate-50 transition-all duration-300 ease-in-out"
-                    onClick={() => handleLanguageChange(lang.name)}
+                    onClick={() => {
+                      handleLanguageChange(lang.name);
+                      toggleDropdown();
+                    }}
                   >
                     {lang.name}
                   </button>
