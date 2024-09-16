@@ -18,7 +18,8 @@ const CodeCanvas = () => {
   const [theme, setTheme] = useState(themes[0]);
   const [background, setBackground] = useState(backgrounds[0]);
   const [activeIcon, setActiveIcon] = useState(languages[0].icon);
-  const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
+  const [paddings] = useState(["1rem", "2rem", "3rem", "4rem"]); // No need for setPaddings
+
   const [currentPadding, setCurrentPadding] = useState(paddings[2]);
 
   const exportPng = async () => {
