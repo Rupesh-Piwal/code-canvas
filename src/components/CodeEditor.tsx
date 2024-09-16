@@ -53,7 +53,7 @@ function CodeEditor({
     const newTitle = e.target.value.split(".")[0];
     setTitle(newTitle);
   };
-  // @ts-expect-error
+  // @ts-expect-error: TypeScript doesn't recognize this handler's signature, but it works as expected.
   const handleResize = (evt, direction, ref, pos) => {
     const newHeight = ref.style.height;
     setHeight(parseInt(newHeight, 10));
