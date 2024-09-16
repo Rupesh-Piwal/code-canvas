@@ -34,8 +34,8 @@ const page = () => {
         <ThemeSelector theme={theme} setTheme={setTheme} />
 
         <BackgroundSelector
-        // background={background}
-        // setBackground={setBackground}
+        background={background}
+        setBackground={setBackground}
         />
 
         <PaddingSelector
