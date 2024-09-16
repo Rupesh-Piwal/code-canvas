@@ -24,10 +24,12 @@ const CodeCanvas = () => {
 
     if (editorElem) {
       // Hide elements
-      const handleElems = document.querySelectorAll(".handle") as any;
-      const cursorElem = document.querySelector(".ace_cursor") as any;
-      const codetitle = document.querySelector(".code-title") as any;
-      const codeEditor = document.querySelector(".ace_editor") as any;
+      const handleElems = document.querySelectorAll(
+        ".handle"
+      ) as NodeListOf<HTMLElement>;
+      const cursorElem = document.querySelector(".ace_cursor") as HTMLElement;
+      const codetitle = document.querySelector(".code-title") as HTMLElement;
+      const codeEditor = document.querySelector(".ace_editor") as HTMLElement;
 
       handleElems.forEach((elem: any) => {
         elem.style.display = "none";
