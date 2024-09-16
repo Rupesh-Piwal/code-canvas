@@ -53,8 +53,7 @@ function CodeEditor({
     const newTitle = e.target.value.split(".")[0];
     setTitle(newTitle);
   };
-
-  // @ts-ignore
+  // @ts-expect-error
   const handleResize = (evt, direction, ref, pos) => {
     const newHeight = ref.style.height;
     setHeight(parseInt(newHeight, 10));
@@ -144,7 +143,7 @@ function CodeEditor({
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
           theme={theme}
-            mode={language.toLocaleLowerCase()}
+          mode={language.toLocaleLowerCase()}
           showGutter={false}
           wrapEnabled={true}
           height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}

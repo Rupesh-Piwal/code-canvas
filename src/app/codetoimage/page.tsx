@@ -12,7 +12,7 @@ import { useRef, useState } from "react";
 
 // import { getExtension, initialCode } from "@/utils/utilities";
 
-const page = () => {
+const Page = () => {
   const editorRef = useRef(null);
   const [language, setLanguage] = useState(languages[0].name);
   const [theme, setTheme] = useState(themes[0]);
@@ -108,4 +108,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
