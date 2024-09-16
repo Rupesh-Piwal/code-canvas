@@ -34,14 +34,14 @@ const page = () => {
         <ThemeSelector theme={theme} setTheme={setTheme} />
 
         <BackgroundSelector
-        background={background}
-        setBackground={setBackground}
+          background={background}
+          setBackground={setBackground}
         />
 
         <PaddingSelector
-        // paddings={paddings}
-        // currentPadding={currentPadding}
-        // setCurrentPadding={setCurrentPadding}
+          paddings={paddings}
+          currentPadding={currentPadding}
+          setCurrentPadding={setCurrentPadding}
         />
 
         <div className="export-btn self-center ml-auto">
