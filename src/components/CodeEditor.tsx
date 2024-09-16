@@ -1,9 +1,10 @@
 "use client";
+
 import React, { useEffect } from "react";
-import { Resizable } from "re-resizable";
+import { Resizable, ResizeCallback } from "re-resizable"; // Importing ResizeCallback for resize event
 import AceEditor from "react-ace";
 
-//languages
+// languages
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-css";
@@ -11,7 +12,7 @@ import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-typescript";
 
-//themes
+// themes
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/theme-twilight";
@@ -36,7 +37,6 @@ function CodeEditor({
   const [height, setHeight] = React.useState<number | null>(500);
   const [title, setTitle] = React.useState("App");
   const [code, setCode] = React.useState(initialCode);
-
   const [extension, setExtension] = React.useState(".js");
 
   useEffect(() => {
@@ -49,13 +49,17 @@ function CodeEditor({
   };
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Extract the title without the extension
     const newTitle = e.target.value.split(".")[0];
     setTitle(newTitle);
   };
-  // @ts-expect-error: TypeScript doesn't recognize this handler's signature, but it works as expected.
-  const handleResize = (ref) => {
-    const newHeight = ref.style.height;
+
+  const handleResize: ResizeCallback = (
+    event,
+    direction,
+    elementRef,
+    delta
+  ) => {
+    const newHeight = elementRef.style.height;
     setHeight(parseInt(newHeight, 10));
   };
 
@@ -122,7 +126,7 @@ function CodeEditor({
             <input
               type="text"
               value={`${title}${extension}`}
-              onChange={(e) => handleTitleChange(e)}
+              onChange={handleTitleChange}
               className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium 
                 text-center bg-transparent"
               style={{
@@ -138,15 +142,16 @@ function CodeEditor({
             <img src={icon} className="w-[33px]" alt="icon" />
           </div>
         </div>
+
         <AceEditor
           value={code}
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
           theme={theme}
-          mode={language.toLocaleLowerCase()}
+          mode={language.toLowerCase()}
           showGutter={false}
           wrapEnabled={true}
-          height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
+          height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`} // Calculating editor height
           showPrintMargin={false}
           highlightActiveLine={false}
           editorProps={{ $blockScrolling: true }}
