@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import BackgroundSelector from "@/components/BackgroundSelector";
 import CodeEditor from "@/components/CodeEditor";
 import LanguageSelector from "@/components/LanguageSelector";
@@ -7,16 +8,17 @@ import ThemeSelector from "@/components/ThemeSelector";
 import { backgrounds, languages, themes } from "@/utils/utilities";
 import { useRef, useState } from "react";
 
-const page = () => {
-    const editorRef = useRef(null);
-    const [language, setLanguage] = useState(languages[0].name);
-    const [theme, setTheme] = useState(themes[0]);
-    const [background, setBackground] = useState(backgrounds[0]);
-    const [activeIcon, setActiveIcon] = useState(languages[0].icon);
-    const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
-    const [currentPadding, setCurrentPadding] = useState(paddings[2]);
+// import { getExtension, initialCode } from "@/utils/utilities";
 
-    
+const page = () => {
+  const editorRef = useRef(null);
+  const [language, setLanguage] = useState(languages[0].name);
+  const [theme, setTheme] = useState(themes[0]);
+  const [background, setBackground] = useState(backgrounds[0]);
+  const [activeIcon, setActiveIcon] = useState(languages[0].icon);
+  const [paddings, setPaddings] = useState(["1rem", "2rem", "3rem", "4rem"]);
+  const [currentPadding, setCurrentPadding] = useState(paddings[2]);
+
   return (
     <main className=" h-[100vh] flex flex-col items-center justify-between">
       <header
@@ -24,14 +26,12 @@ const page = () => {
        z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md"
       >
         <LanguageSelector
-        language={language}
-        setLanguage={setLanguage}
-        setActiveIcon={setActiveIcon}
+          language={language}
+          setLanguage={setLanguage}
+          setActiveIcon={setActiveIcon}
         />
 
-        <ThemeSelector
-        // theme={theme} setTheme={setTheme}
-        />
+        <ThemeSelector theme={theme} setTheme={setTheme} />
 
         <BackgroundSelector
         // background={background}

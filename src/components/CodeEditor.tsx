@@ -144,7 +144,7 @@ function CodeEditor({
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
           theme={theme}
-          //   mode={language.toLocaleLowerCase()}
+            mode={language.toLocaleLowerCase()}
           showGutter={false}
           wrapEnabled={true}
           height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
