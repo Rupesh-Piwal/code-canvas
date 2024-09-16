@@ -31,7 +31,7 @@ const CodeCanvas = () => {
       const codetitle = document.querySelector(".code-title") as HTMLElement;
       const codeEditor = document.querySelector(".ace_editor") as HTMLElement;
 
-      handleElems.forEach((elem: any) => {
+      handleElems.forEach((elem: HTMLElement) => {
         elem.style.display = "none";
       });
       cursorElem.style.display = "none";
@@ -49,7 +49,7 @@ const CodeCanvas = () => {
       link.click();
 
       // Show elements
-      handleElems.forEach((elem: any) => {
+      handleElems.forEach((elem: HTMLElement) => {
         elem.style.display = "block";
       });
       cursorElem.style.display = "block";
