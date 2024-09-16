@@ -54,7 +54,7 @@ function CodeEditor({
     setTitle(newTitle);
   };
   // @ts-expect-error: TypeScript doesn't recognize this handler's signature, but it works as expected.
-  const handleResize = (evt, direction, ref, pos) => {
+  const handleResize = (ref) => {
     const newHeight = ref.style.height;
     setHeight(parseInt(newHeight, 10));
   };
