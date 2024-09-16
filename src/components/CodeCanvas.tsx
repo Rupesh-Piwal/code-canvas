@@ -13,7 +13,7 @@ import { useRef, useState } from "react";
 // import { getExtension, initialCode } from "@/utils/utilities";
 
 const CodeCanvas = () => {
-  const editorRef = useRef(null);
+  const editorRef = useRef<HTMLDivElement | null>(null);
   const [language, setLanguage] = useState(languages[0].name);
   const [theme, setTheme] = useState(themes[0]);
   const [background, setBackground] = useState(backgrounds[0]);
@@ -26,17 +26,17 @@ const CodeCanvas = () => {
 
     if (editorElem) {
       //hide elemnets
-      const handleElems = document.querySelectorAll(".handle") as any;
-      const cursorElem = document.querySelector(".ace_cursor") as any;
-      const codetitle = document.querySelector(".code-title") as any;
-      const codeEditor = document.querySelector(".ace_editor") as any;
+      const handleElems = document.querySelectorAll<HTMLDivElement>(".handle");
+      const cursorElem = document.querySelector<HTMLDivElement>(".ace_cursor");
+      const codetitle = document.querySelector<HTMLDivElement>(".code-title");
+      const codeEditor = document.querySelector<HTMLDivElement>(".ace_editor");
 
-      handleElems.forEach((elem: any) => {
+      handleElems.forEach((elem) => {
         elem.style.display = "none";
       });
-      cursorElem.style.display = "none";
-      codetitle.style.boxShadow = "none";
-      codeEditor.style.boxShadow = "none";
+      if (cursorElem) cursorElem.style.display = "none";
+      if (codetitle) codetitle.style.boxShadow = "none";
+      if (codeEditor) codeEditor.style.boxShadow = "none";
 
       const canvas = await html2canvas(editorElem);
       const image = canvas
@@ -48,13 +48,15 @@ const CodeCanvas = () => {
       link.href = image;
       link.click();
 
-      //show elements
-      handleElems.forEach((elem: any) => {
+      // Show elements back
+      handleElems.forEach((elem) => {
         elem.style.display = "block";
       });
-      cursorElem.style.display = "block";
-      codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
-      codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
+      if (cursorElem) cursorElem.style.display = "block";
+      if (codetitle)
+        codetitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
+      if (codeEditor)
+        codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
     }
   };
 
