@@ -48,11 +48,10 @@ function CodeEditor({
     setCode(newCode);
   };
 
-
-const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const newTitle = e.target.value.split(".")[0];
-  setTitle(newTitle);
-};
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTitle = e.target.value.split(".")[0];
+    setTitle(newTitle);
+  };
   // @ts-expect-error: TypeScript doesn't recognize this handler's signature, but it works as expected.
   const handleResize = (ref) => {
     const newHeight = ref.style.height;

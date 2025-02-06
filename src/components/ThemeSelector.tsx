@@ -31,7 +31,7 @@ const ThemeSelector = ({ theme, setTheme }: ThemeSelectorProps) => {
           <ChevronDown />
         </div>
         {showDropdown && (
-          <div className="dropdown-menu w-[120px] top-[94px]">
+          <div className="dropdown-menu w-[100px] md:w-[120px] top-[94px]">
             {themes.map((theme, i) => {
               return (
                 <div key={i}>

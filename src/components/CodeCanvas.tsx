@@ -60,7 +60,7 @@ const CodeCanvas = () => {
 
   return (
     <main className="h-[100vh] flex flex-col items-center justify-between">
-      <header className="mt-6 flex gap-6 w-[940px] p-5 fixed top-0 left-1/2 translate-x-[-50%] z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md">
+      <header className="mt-6 flex gap-6 w-[95%] md:w-[940px] p-5 fixed top-0 left-1/2 translate-x-[-50%] z-10 bg-[#191919] rounded border border-[#3C3C3C] shadow-md">
         <LanguageSelector
           language={language}
           setLanguage={setLanguage}
@@ -82,7 +82,7 @@ const CodeCanvas = () => {
             onClick={exportPng}
           >
             <Download />
-            Export PNG
+            <span className="hidden md:inline"> Export PNG</span>
           </button>
         </div>
       </header>
