@@ -106,8 +106,8 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-xl opacity-50 group-hover:opacity-100 blur transition-all duration-500" />
-                  <div className="relative flex flex-col items-center space-y-4 p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-all duration-300">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-gray-900/50 via-gray-800/50 to-gray-800/50 rounded-xl opacity-50 group-hover:opacity-100 blur transition-all duration-500" />
+                  <div className="relative flex flex-col items-center space-y-4 p-6 rounded-xl bg-transparent border border-gray-900 hover:border-gray-600 transition-all duration-300">
                     <motion.div
                       className="p-3 rounded-xl bg-gradient-to-br from-gray-700 to-gray-800"
                       whileHover={{ scale: 1.1, rotate: 5 }}

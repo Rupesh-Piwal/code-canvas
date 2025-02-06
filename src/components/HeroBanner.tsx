@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, Stars } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "./dot-pattern";
+import { ShimmerButton } from "./shimmer-button";
+import { TextAnimate } from "./text-animate";
 
 const HeroBanner = () => {
   const fadeInUp = {
@@ -114,6 +116,7 @@ const HeroBanner = () => {
               <span className="inline-block bg-gradient-to-br from-white via-gray-400 to-gray-600 bg-clip-text text-transparent">
                 Into Visual Art
               </span>
+              
             </motion.h1>
 
             <motion.p
@@ -127,20 +130,10 @@ const HeroBanner = () => {
 
           <motion.div variants={fadeInUp} initial="initial" animate="animate">
             <Link href="/codetoimage">
-              <motion.button
-                className="group relative px-8 py-4 bg-gradient-to-r from-[#343B7C] via-[#4A5190] to-[#343B7C] bg-size-200 rounded-full text-white font-medium text-lg shadow-lg shadow-[#343B7C]/25 hover:shadow-[#343B7C]/50 transition-all duration-300"
-                whileHover={{ scale: 1.05, backgroundPosition: "right center" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="flex items-center gap-2">
-                  Start Creating
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-[#343B7C] to-[#4A5190] opacity-0 group-hover:opacity-100 blur-xl transition-opacity"
-                  initial={false}
-                />
-              </motion.button>
+              <ShimmerButton className="flex items-center gap-2 shadow-lg">
+                Start Creating
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </ShimmerButton>
             </Link>
           </motion.div>
 
