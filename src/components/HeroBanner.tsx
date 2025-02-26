@@ -8,7 +8,7 @@ import { Sparkles, ArrowRight, Stars } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "./dot-pattern";
 import { ShimmerButton } from "./shimmer-button";
-import { TextAnimate } from "./text-animate";
+
 
 const HeroBanner = () => {
   const fadeInUp = {
